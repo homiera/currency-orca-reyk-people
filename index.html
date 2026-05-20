@@ -3,34 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>11 Consulting LLC — Fractional HR for Small Businesses</title>
-<link rel="icon" type="image/png" href="favicon.png">
+<title>1:1 Consulting — Fractional HR for Small Businesses</title>
 <meta name="description" content="PHR-certified fractional HR support for small and mission-driven organizations. Starter audits, ongoing support, and full HR build-outs.">
+<link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Instrument+Serif:ital@0;1&family=Instrument+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
 
+/* ================================
+   TOKENS
+   ================================ */
 :root {
-  --warm:       #F6F1E9;
-  --warm-2:     #EDE7DC;
-  --dark:       #0D0B09;
-  --dark-2:     #161210;
-  --teal:       #7B9E6B;
-  --teal-dim:   rgba(123,158,107,0.1);
-  --ink:        #1A1612;
-  --muted:      #7D756D;
-  --faint:      #B5ACA4;
-  --line:       rgba(26,22,18,0.1);
-  --line-dark:  rgba(246,241,233,0.09);
-  --lt-muted:   rgba(246,241,233,0.5);
-  --serif:      'Bricolage Grotesque', sans-serif;
-  --book:       'Instrument Serif', serif;
-  --body:       'Instrument Sans', sans-serif;
+  --warm:      #F6F1E9;
+  --dark:      #0D0B09;
+  --dark-2:    #161210;
+  --sage:      #7B9E6B;
+  --sage-hover:#8FB87E;
+  --ink:       #1A1612;
+  --muted:     #7D756D;
+  --faint:     #B5ACA4;
+  --line:      rgba(26,22,18,0.1);
+  --line-dark: rgba(246,241,233,0.09);
+  --lt-muted:  rgba(246,241,233,0.55);
+  --serif:     'Bricolage Grotesque', sans-serif;
+  --book:      'Instrument Serif', serif;
+  --body:      'Instrument Sans', sans-serif;
 }
 
-*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; font-size:16px; }
+/* ================================
+   RESET & BASE
+   ================================ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
 
 body {
   font-family: var(--body);
@@ -42,27 +47,33 @@ body {
   cursor: none;
 }
 
-/* CUSTOM CURSOR */
+/* ================================
+   CURSOR
+   ================================ */
 .cursor {
   position: fixed;
-  width: 10px; height: 10px;
-  background: var(--teal);
+  width: 10px;
+  height: 10px;
+  background: var(--sage);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   transition: width 0.25s, height 0.25s, background 0.25s, opacity 0.25s;
   will-change: transform;
 }
 .cursor.grow {
-  width: 40px; height: 40px;
+  width: 40px;
+  height: 40px;
   background: transparent;
-  border: 1px solid var(--teal);
+  border: 1px solid var(--sage);
   opacity: 0.6;
 }
 body:not(:hover) .cursor { opacity: 0; }
 
-/* NAV */
+/* ================================
+   NAV
+   ================================ */
 nav {
   position: fixed;
   inset: 0 0 auto 0;
@@ -72,8 +83,8 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 0 5vw;
-  transition: background 0.4s, border-color 0.4s;
   border-bottom: 1px solid transparent;
+  transition: background 0.4s, border-color 0.4s;
 }
 nav.scrolled {
   background: rgba(246,241,233,0.95);
@@ -86,7 +97,7 @@ nav.dark-nav {
   border-color: var(--line-dark);
 }
 
-/* NAV LOGO — A5 horizontal lockup */
+/* Logo — A5 horizontal lockup */
 .logo {
   display: flex;
   align-items: center;
@@ -102,10 +113,11 @@ nav.dark-nav {
   font-size: 1.55rem;
   letter-spacing: 0.02em;
   line-height: 1;
-  transition: opacity 0.3s;
+  color: var(--ink);
+  transition: color 0.3s;
 }
-.logo-mark .num { color: var(--ink); transition: color 0.3s; }
-nav.dark-nav .logo-mark .num { color: var(--warm); }
+nav.dark-nav .logo-mark { color: var(--warm); }
+
 .logo-colon {
   display: flex;
   flex-direction: column;
@@ -117,7 +129,7 @@ nav.dark-nav .logo-mark .num { color: var(--warm); }
   width: 0.16em;
   height: 0.16em;
   border-radius: 50%;
-  background: var(--teal);
+  background: var(--sage);
   flex-shrink: 0;
 }
 .logo-divider {
@@ -128,6 +140,7 @@ nav.dark-nav .logo-mark .num { color: var(--warm); }
   transition: background 0.3s;
 }
 nav.dark-nav .logo-divider { background: var(--warm); }
+
 .logo-stack {
   display: flex;
   flex-direction: column;
@@ -143,6 +156,7 @@ nav.dark-nav .logo-divider { background: var(--warm); }
   transition: color 0.3s;
 }
 nav.dark-nav .logo-name { color: var(--warm); }
+
 .logo-sub {
   font-family: var(--body);
   font-weight: 300;
@@ -155,7 +169,7 @@ nav.dark-nav .logo-name { color: var(--warm); }
 }
 nav.dark-nav .logo-sub { color: rgba(246,241,233,0.3); }
 
-
+/* Nav links */
 .nav-links {
   display: flex;
   align-items: center;
@@ -171,20 +185,23 @@ nav.dark-nav .logo-sub { color: rgba(246,241,233,0.3); }
   transition: color 0.2s;
 }
 nav.dark-nav .nav-links a { color: var(--lt-muted); }
-.nav-links a:hover { color: var(--teal); }
+.nav-links a:hover { color: var(--sage); }
 
-.nav-cta {
-  color: var(--warm) !important;
-  background: var(--teal);
+.nav-links a.nav-cta {
+  color: var(--warm);
+  background: var(--sage);
   padding: 0.55rem 1.4rem;
   border-radius: 100px;
-  font-size: 0.78rem !important;
+  font-size: 0.78rem;
   letter-spacing: 0.08em;
-  transition: opacity 0.2s, transform 0.2s !important;
+  transition: opacity 0.2s, transform 0.2s;
 }
-.nav-cta:hover { opacity: 0.85; transform: translateY(-1px); }
+nav.dark-nav .nav-links a.nav-cta { color: var(--warm); }
+.nav-links a.nav-cta:hover { opacity: 0.85; transform: translateY(-1px); }
 
-/* HERO */
+/* ================================
+   HERO
+   ================================ */
 .hero {
   min-height: 100vh;
   background: var(--warm);
@@ -193,16 +210,13 @@ nav.dark-nav .nav-links a { color: var(--lt-muted); }
   justify-content: flex-end;
   padding: 0 5vw 8vh;
   position: relative;
-  overflow: visible;
 }
-
 .hero-top {
   position: absolute;
-  top: 68px; left: 5vw; right: 5vw;
+  top: 68px;
+  left: 5vw;
+  right: 5vw;
   padding-top: 3rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
 }
 .hero-kicker {
   font-size: 0.72rem;
@@ -211,13 +225,7 @@ nav.dark-nav .nav-links a { color: var(--lt-muted); }
   text-transform: uppercase;
   color: var(--muted);
 }
-.hero-kicker .dot { color: var(--teal); margin: 0 0.4rem; }
-.hero-cert {
-  font-size: 0.72rem;
-  font-weight: 400;
-  letter-spacing: 0.08em;
-  color: var(--faint);
-}
+.hero-kicker .dot { color: var(--sage); margin: 0 0.4rem; }
 
 .hero-h1 {
   font-family: var(--serif);
@@ -228,10 +236,8 @@ nav.dark-nav .nav-links a { color: var(--lt-muted); }
   color: var(--ink);
   margin-bottom: 3.5rem;
 }
-
 .word-wrap {
   display: inline-block;
-  overflow: visible;
   vertical-align: bottom;
   line-height: 0.95;
 }
@@ -242,7 +248,7 @@ nav.dark-nav .nav-links a { color: var(--lt-muted); }
   animation: wordUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 @keyframes wordUp {
-  to { opacity:1; transform:translateY(0); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .hero-bottom {
@@ -270,6 +276,13 @@ nav.dark-nav .nav-links a { color: var(--lt-muted); }
   opacity: 0;
   animation: fadeUp 0.9s 1.05s forwards;
 }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Buttons */
 .btn {
   display: inline-block;
   font-family: var(--body);
@@ -283,8 +296,10 @@ nav.dark-nav .nav-links a { color: var(--lt-muted); }
   transition: transform 0.2s, background 0.2s, color 0.2s, border-color 0.2s;
 }
 .btn:hover { transform: translateY(-2px); }
-.btn-teal { background: var(--teal); color: var(--dark); }
-.btn-teal:hover { background: #8FB87E; }
+
+.btn-sage { background: var(--sage); color: var(--dark); }
+.btn-sage:hover { background: var(--sage-hover); }
+
 .btn-outline {
   background: transparent;
   border: 1px solid var(--line);
@@ -292,32 +307,17 @@ nav.dark-nav .nav-links a { color: var(--lt-muted); }
 }
 .btn-outline:hover { border-color: var(--ink); color: var(--ink); }
 
-@keyframes fadeUp {
-  from { opacity:0; transform:translateY(24px); }
-  to   { opacity:1; transform:translateY(0); }
-}
-@keyframes fadeIn {
-  from { opacity:0; }
-  to   { opacity:1; }
-}
-
-
-
-/* SERVICES */
-.services {
-  background: var(--dark);
-  padding: 9rem 5vw;
-}
+/* ================================
+   SHARED SECTION ELEMENTS
+   ================================ */
 .section-label {
   font-size: 0.7rem;
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   margin-bottom: 1.2rem;
+  color: var(--sage);
 }
-.label-warm { color: var(--teal); }
-.label-dark { color: var(--teal); }
-
 .section-h2 {
   font-family: var(--serif);
   font-weight: 700;
@@ -327,6 +327,13 @@ nav.dark-nav .nav-links a { color: var(--lt-muted); }
 .h2-dark { color: var(--warm); }
 .h2-warm { color: var(--ink); }
 
+/* ================================
+   SERVICES
+   ================================ */
+.services {
+  background: var(--dark);
+  padding: 9rem 5vw;
+}
 .services-header {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -352,23 +359,24 @@ nav.dark-nav .nav-links a { color: var(--lt-muted); }
   align-items: start;
   padding: 2.2rem 0;
   border-top: 1px solid var(--line-dark);
-  transition: all 0.25s;
   position: relative;
+  transition: all 0.25s;
 }
 .service-row:last-child { border-bottom: 1px solid var(--line-dark); }
 .service-row::before {
   content: '';
   position: absolute;
   left: -5vw;
-  top: 0; bottom: 0;
+  top: 0;
+  bottom: 0;
   width: 3px;
-  background: var(--teal);
+  background: var(--sage);
   transform: scaleY(0);
-  transition: transform 0.3s cubic-bezier(0.16,1,0.3,1);
   transform-origin: top;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .service-row:hover::before { transform: scaleY(1); }
-.service-row:hover .svc-name { color: var(--teal); }
+.service-row:hover .svc-name { color: var(--sage); }
 
 .svc-num {
   font-family: var(--serif);
@@ -384,8 +392,8 @@ nav.dark-nav .nav-links a { color: var(--lt-muted); }
   font-weight: 600;
   color: var(--warm);
   letter-spacing: -0.02em;
-  transition: color 0.25s;
   line-height: 1.2;
+  transition: color 0.25s;
 }
 .svc-desc {
   font-size: 0.87rem;
@@ -397,13 +405,15 @@ nav.dark-nav .nav-links a { color: var(--lt-muted); }
   font-family: var(--serif);
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--teal);
+  color: var(--sage);
   text-align: right;
   white-space: nowrap;
   padding-top: 0.1rem;
 }
 
-/* WHY IT MATTERS */
+/* ================================
+   WHY IT MATTERS
+   ================================ */
 .why {
   background: var(--warm);
   padding: 9rem 5vw;
@@ -414,20 +424,8 @@ nav.dark-nav .nav-links a { color: var(--lt-muted); }
   gap: 8rem;
   align-items: start;
 }
-.why-left {}
-.why-left .section-h2 { font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: 2rem; }
-.why-pull {
-  font-family: var(--book);
-  font-style: italic;
-  font-size: clamp(1.15rem, 2vw, 1.45rem);
-  color: var(--ink);
-  line-height: 1.5;
-  max-width: 32ch;
-  margin-top: 2.5rem;
-  padding-top: 2.5rem;
-  border-top: 1px solid var(--line);
-}
-.why-right p {
+.why-left .section-h2 { font-size: clamp(2rem, 3.5vw, 3rem); }
+.why-body p {
   font-size: 0.97rem;
   color: var(--muted);
   line-height: 1.9;
@@ -435,11 +433,12 @@ nav.dark-nav .nav-links a { color: var(--lt-muted); }
   margin-bottom: 1.4rem;
   max-width: 54ch;
 }
-.why-right p strong { color: var(--ink); font-weight: 500; }
+.why-body p:last-child { margin-bottom: 0; }
+.why-body strong { color: var(--ink); font-weight: 500; }
 
-
-
-/* ABOUT */
+/* ================================
+   ABOUT
+   ================================ */
 .about {
   background: var(--dark);
   padding: 9rem 5vw;
@@ -450,18 +449,21 @@ nav.dark-nav .nav-links a { color: var(--lt-muted); }
   gap: 8rem;
   align-items: start;
 }
-.about-left .section-h2 { font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: 2.5rem; }
+.about-left .section-h2 {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  margin-bottom: 2.5rem;
+}
 .about-left p {
   font-size: 0.97rem;
-  color: #FFFFFF;
+  color: var(--warm);
   line-height: 1.9;
   font-weight: 400;
   margin-bottom: 1.2rem;
   max-width: 54ch;
 }
-.about-left p strong { color: #FFFFFF; font-weight: 600; }
+.about-left p:first-child { margin-top: 2rem; }
+.about-left p strong { color: var(--warm); font-weight: 600; }
 
-.about-right {}
 .expertise-label {
   font-size: 0.7rem;
   font-weight: 500;
@@ -470,12 +472,10 @@ nav.dark-nav .nav-links a { color: var(--lt-muted); }
   color: rgba(246,241,233,0.25);
   margin-bottom: 1.2rem;
 }
-.expertise-list {
-  list-style: none;
-}
+.expertise-list { list-style: none; }
 .expertise-list li {
   font-size: 0.9rem;
-  color: rgba(246,241,233,0.92);
+  color: rgba(246,241,233,0.88);
   font-weight: 400;
   padding: 0.85rem 0;
   border-bottom: 1px solid var(--line-dark);
@@ -487,17 +487,20 @@ nav.dark-nav .nav-links a { color: var(--lt-muted); }
 .expertise-list li:first-child { border-top: 1px solid var(--line-dark); }
 .expertise-list li::before {
   content: '';
-  width: 5px; height: 5px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
-  background: var(--teal);
+  background: var(--sage);
   flex-shrink: 0;
   opacity: 0.5;
   transition: opacity 0.2s;
 }
-.expertise-list li:hover { color: rgba(246,241,233,0.92); }
+.expertise-list li:hover { color: var(--warm); }
 .expertise-list li:hover::before { opacity: 1; }
 
-/* INSIGHTS / NEWSLETTER */
+/* ================================
+   INSIGHTS / NEWSLETTER
+   ================================ */
 .insights {
   background: var(--warm);
   padding: 9rem 5vw;
@@ -518,28 +521,19 @@ nav.dark-nav .nav-links a { color: var(--lt-muted); }
   line-height: 1.7;
   max-width: 38ch;
 }
-
-.signup-wrap {
-  max-width: 600px;
-}
-
-.signup-form {}
-
+.signup-wrap { max-width: 600px; }
 .signup-row {
   display: flex;
-  gap: 0;
   border: 1px solid var(--line);
   border-radius: 100px;
   overflow: hidden;
   background: #fff;
   transition: border-color 0.25s, box-shadow 0.25s;
 }
-
 .signup-row:focus-within {
-  border-color: var(--teal);
+  border-color: var(--sage);
   box-shadow: 0 0 0 3px rgba(123,158,107,0.12);
 }
-
 .signup-input {
   flex: 1;
   border: none;
@@ -552,11 +546,9 @@ nav.dark-nav .nav-links a { color: var(--lt-muted); }
   padding: 1rem 1.5rem;
   min-width: 0;
 }
-
 .signup-input::placeholder { color: var(--faint); }
-
 .signup-btn {
-  background: var(--teal);
+  background: var(--sage);
   color: var(--dark);
   border: none;
   outline: none;
@@ -568,14 +560,10 @@ nav.dark-nav .nav-links a { color: var(--lt-muted); }
   border-radius: 100px;
   cursor: none;
   white-space: nowrap;
-  transition: background 0.2s, transform 0.2s;
   margin: 4px;
+  transition: background 0.2s, transform 0.2s;
 }
-
-.signup-btn:hover {
-  background: #8FB87E;
-}
-
+.signup-btn:hover { background: var(--sage-hover); }
 .signup-fine {
   font-size: 0.72rem;
   color: var(--faint);
@@ -585,13 +573,9 @@ nav.dark-nav .nav-links a { color: var(--lt-muted); }
   letter-spacing: 0.02em;
 }
 
-@media (max-width: 860px) {
-  .insights-header { grid-template-columns: 1fr; gap: 1.5rem; }
-  .signup-row { border-radius: 12px; flex-direction: column; }
-  .signup-btn { border-radius: 8px; margin: 4px; padding: 0.9rem; }
-}
-
-/* CONTACT */
+/* ================================
+   CONTACT
+   ================================ */
 .contact {
   background: var(--dark);
   padding: 9rem 5vw;
@@ -628,7 +612,7 @@ nav.dark-nav .nav-links a { color: var(--lt-muted); }
 .contact-h2 em {
   font-style: italic;
   font-weight: 400;
-  color: var(--teal);
+  color: var(--sage);
   font-family: var(--book);
 }
 .contact-desc {
@@ -653,37 +637,17 @@ nav.dark-nav .nav-links a { color: var(--lt-muted); }
   padding-bottom: 0.5rem;
   transition: color 0.2s, border-color 0.2s;
 }
-.email-link:hover { color: var(--teal); border-color: var(--teal); }
+.email-link:hover { color: var(--sage); border-color: var(--sage); }
 .email-link .arr {
   font-size: 1rem;
   opacity: 0.4;
   transition: transform 0.2s, opacity 0.2s;
 }
-.email-link:hover .arr { transform: translate(4px,-4px); opacity:1; }
+.email-link:hover .arr { transform: translate(4px, -4px); opacity: 1; }
 
-.contact-details {
-  display: flex;
-  gap: 4rem;
-  margin-top: 4rem;
-  padding-top: 3rem;
-  border-top: 1px solid var(--line-dark);
-}
-.contact-detail {}
-.cd-label {
-  font-size: 0.68rem;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(246,241,233,0.25);
-  margin-bottom: 0.4rem;
-}
-.cd-val {
-  font-size: 0.9rem;
-  color: rgba(246,241,233,0.65);
-  font-weight: 300;
-}
-
-/* FOOTER */
+/* ================================
+   FOOTER
+   ================================ */
 footer {
   background: var(--dark-2);
   border-top: 1px solid var(--line-dark);
@@ -692,7 +656,6 @@ footer {
   justify-content: space-between;
   align-items: center;
 }
-/* FOOTER LOGO — A2 stacked */
 .footer-logo {
   display: flex;
   flex-direction: column;
@@ -722,7 +685,7 @@ footer {
   width: 0.17em;
   height: 0.17em;
   border-radius: 50%;
-  background: var(--teal);
+  background: var(--sage);
   flex-shrink: 0;
   opacity: 0.7;
 }
@@ -735,7 +698,6 @@ footer {
   color: rgba(246,241,233,0.25);
   line-height: 1;
 }
-
 footer p {
   font-size: 0.73rem;
   color: rgba(246,241,233,0.2);
@@ -743,7 +705,9 @@ footer p {
   letter-spacing: 0.04em;
 }
 
-/* SCROLL REVEALS */
+/* ================================
+   SCROLL REVEALS
+   ================================ */
 [data-reveal] {
   opacity: 0;
   transform: translateY(28px);
@@ -755,10 +719,11 @@ footer p {
   transform: none;
 }
 
-/* RESPONSIVE */
+/* ================================
+   RESPONSIVE
+   ================================ */
 @media (max-width: 860px) {
   .hero-h1 { font-size: clamp(3rem, 13vw, 5rem); }
-  .hero-top { flex-direction: column; gap: 0.5rem; }
   .hero-bottom { grid-template-columns: 1fr; gap: 2rem; }
   .hero-actions { justify-content: flex-start; }
   .services-header { grid-template-columns: 1fr; gap: 1.5rem; }
@@ -766,12 +731,10 @@ footer p {
   .svc-desc { grid-column: 2; }
   .svc-price { grid-column: 2; text-align: left; }
   .why-grid { grid-template-columns: 1fr; gap: 3rem; }
-  .why-stats { grid-template-columns: 1fr 1fr; }
   .about-grid { grid-template-columns: 1fr; gap: 4rem; }
   .insights-header { grid-template-columns: 1fr; gap: 1.5rem; }
-  .insight-row { grid-template-columns: 2.5rem 1fr; }
-  .insight-right { grid-column: 2; }
-  .contact-details { flex-wrap: wrap; gap: 2rem; }
+  .signup-row { border-radius: 12px; flex-direction: column; }
+  .signup-btn { border-radius: 8px; margin: 4px; padding: 0.9rem; }
   .nav-links { gap: 1.2rem; }
   footer { flex-direction: column; gap: 0.75rem; text-align: center; }
 }
@@ -786,9 +749,9 @@ footer p {
 <nav id="nav">
   <a href="#" class="logo">
     <div class="logo-mark">
-      <span class="num">1</span>
+      <span>1</span>
       <span class="logo-colon"><span class="logo-dot"></span><span class="logo-dot"></span></span>
-      <span class="num">1</span>
+      <span>1</span>
     </div>
     <div class="logo-divider"></div>
     <div class="logo-stack">
@@ -807,7 +770,9 @@ footer p {
 <!-- HERO -->
 <section class="hero">
   <div class="hero-top">
-    <p class="hero-kicker">Fractional HR<span class="dot">·</span>PHR Certified<span class="dot">·</span>Headquartered in Alexandria, VA</p>
+    <p class="hero-kicker">
+      Fractional HR<span class="dot">·</span>PHR Certified<span class="dot">·</span>Headquartered in Alexandria, VA
+    </p>
   </div>
 
   <h1 class="hero-h1" id="hero-h1">Your people deserve better HR.</h1>
@@ -818,46 +783,38 @@ footer p {
     </p>
     <div class="hero-actions">
       <a href="#services" class="btn btn-outline">Our services</a>
-      <a href="#contact" class="btn btn-teal">Get in touch</a>
+      <a href="#contact" class="btn btn-sage">Get in touch</a>
     </div>
   </div>
 </section>
-
-
 
 <!-- SERVICES -->
 <section class="services" id="services">
   <div class="services-header">
     <div data-reveal>
-      <p class="section-label label-dark">Services</p>
-      <h2 class="section-h2 h2-dark">Three ways<br>to work together.</h2>
+      <p class="section-label">Services</p>
+      <h2 class="section-h2 h2-dark">Three ways to work together.</h2>
     </div>
-    <p class="services-intro" data-reveal>Every engagement is scoped to what you actually need — priced to fit where you are. No retainer you don't use. No package built around what's easy to sell.</p>
+    <p class="services-intro" data-reveal>Every engagement is scoped to what you actually need, priced to fit where you are. No retainer you don't use. No package built around what's easy to sell.</p>
   </div>
 
   <div class="service-list">
     <div class="service-row" data-reveal>
       <span class="svc-num">01</span>
-      <div>
-        <p class="svc-name">Starter HR Audit</p>
-      </div>
+      <p class="svc-name">Starter HR Audit</p>
       <p class="svc-desc">A structured review of your HR practices, documentation, and compliance posture. You'll know exactly where you stand before making any decisions.</p>
       <p class="svc-price">From $1,250</p>
     </div>
     <div class="service-row" data-reveal>
       <span class="svc-num">02</span>
-      <div>
-        <p class="svc-name">Fractional HR Support</p>
-      </div>
-      <p class="svc-desc">Ongoing generalist support on a flexible, part-time basis. Benefits, payroll, onboarding, employee relations — handled by a PHR-certified professional who knows your organization.</p>
+      <p class="svc-name">Fractional HR Support</p>
+      <p class="svc-desc">Ongoing generalist support on a flexible, part-time basis. Benefits, payroll, onboarding, employee relations, handled by a PHR-certified professional who knows your organization.</p>
       <p class="svc-price">From $600 / 10 hrs</p>
     </div>
     <div class="service-row" data-reveal>
       <span class="svc-num">03</span>
-      <div>
-        <p class="svc-name">HR Build-Out &amp; Infrastructure</p>
-      </div>
-      <p class="svc-desc">For organizations starting from scratch. HRIS selection and setup, hiring process design, employee handbook, onboarding program, compensation framework — built to last.</p>
+      <p class="svc-name">HR Build-Out &amp; Infrastructure</p>
+      <p class="svc-desc">For organizations starting from scratch. HRIS selection and setup, hiring process design, employee handbook, onboarding program, compensation framework, built to last.</p>
       <p class="svc-price">Custom scoped</p>
     </div>
   </div>
@@ -866,32 +823,27 @@ footer p {
 <!-- WHY IT MATTERS -->
 <section class="why" id="why">
   <div class="why-grid">
-    <div>
-      <p class="section-label label-warm" data-reveal>Why It Matters</p>
+    <div class="why-left">
+      <p class="section-label" data-reveal>Why It Matters</p>
       <h2 class="section-h2 h2-warm" data-reveal>Most small businesses don't have a people problem. They have an HR infrastructure problem and just don't know it yet.</h2>
     </div>
-    <div>
-      <p class="why-right" data-reveal></p>
-      <div data-reveal>
-        <p>Without the right foundation in place, small problems compound quietly. A misclassified employee. An outdated handbook. A hiring process that relies on gut feeling. A benefits enrollment that falls apart mid-cycle. These are manageable until they aren't.</p>
-        <p>Good HR doesn't require a full-time team. It requires the right person who has done this before and knows what matters at your size. That's exactly what 11 Consulting was built to provide.</p>
-        <p><strong>Small organizations deserve real HR support</strong> — sized to fit how they actually operate, not how a large enterprise does.</p>
-      </div>
-
+    <div class="why-body" data-reveal>
+      <p>Without the right foundation in place, small problems compound quietly. A misclassified employee. An outdated handbook. A hiring process that relies on gut feeling. A benefits enrollment that falls apart mid-cycle. These are manageable until they aren't.</p>
+      <p>Good HR doesn't require a full-time team. It requires the right person who has done this before and knows what matters at your size. That's exactly what 1:1 Consulting was built to provide.</p>
+      <p><strong>Small organizations deserve real HR support,</strong> sized to fit how they actually operate, not how a large enterprise does.</p>
     </div>
   </div>
 </section>
+
 <!-- ABOUT -->
 <section class="about" id="about">
   <div class="about-grid">
     <div class="about-left">
-      <p class="section-label label-dark" data-reveal>About 11 Consulting</p>
+      <p class="section-label" data-reveal>About 1:1 Consulting</p>
       <h2 class="section-h2 h2-dark" data-reveal>Built by someone who has done this work for 17 years.</h2>
-      <div>
-        <p style="margin-top:2rem; color:#FFFFFF !important;">11 Consulting LLC was founded on a simple premise: small organizations deserve the same quality of HR as large ones, sized to fit how they actually operate.</p>
-        <p style="color:#FFFFFF !important;">Our practice is led by <strong style="color:#FFFFFF; font-weight:600;">Homiera Emam</strong>, a PHR-certified HR professional based in Alexandria, VA. Her background spans every major HR function — payroll administration, HRIS implementation and transitions, full-cycle recruiting, benefits management, performance management, policy development, and people operations through mergers and acquisitions.</p>
-        <p style="color:#FFFFFF !important;">She has navigated two acquisitions from the inside and built HR infrastructure from scratch more than once. She works best with organizations that are serious about their people and ready to build something that lasts.</p>
-      </div>
+      <p>1:1 Consulting LLC was founded on a simple premise: small organizations deserve the same quality of HR as large ones, sized to fit how they actually operate.</p>
+      <p>Our practice is led by <strong>Homiera Emam</strong>, a PHR-certified HR professional based in Alexandria, VA. Her background spans every major HR function, including payroll administration, HRIS implementation and transitions, full-cycle recruiting, benefits management, performance management, policy development, and people operations through mergers and acquisitions.</p>
+      <p>She has built HR infrastructure from scratch, navigated organizations through significant change, and shown up as the steady, knowledgeable HR presence that small teams deserve. She works best with organizations that are serious about their people and ready to build something that lasts.</p>
     </div>
     <div data-reveal>
       <p class="expertise-label">Areas of Practice</p>
@@ -906,7 +858,6 @@ footer p {
         <li>M&amp;A People Operations &amp; Due Diligence</li>
         <li>Employment Law Compliance</li>
       </ul>
-
     </div>
   </div>
 </section>
@@ -915,8 +866,8 @@ footer p {
 <section class="insights" id="insights">
   <div class="insights-header">
     <div data-reveal>
-      <p class="section-label label-warm">People First</p>
-      <h2 class="section-h2 h2-warm">Practical perspectives<br>on people.</h2>
+      <p class="section-label">People First</p>
+      <h2 class="section-h2 h2-warm">Practical perspectives on people.</h2>
     </div>
     <p class="insights-note" data-reveal>Practical perspectives on people management and support for small businesses — what works, what doesn't, and why it matters. Sign up to get new pieces delivered directly to you.</p>
   </div>
@@ -929,7 +880,7 @@ footer p {
       </div>
       <p class="signup-fine">No spam, ever. Unsubscribe anytime.</p>
       <!-- Mailchimp bot protection — do not remove -->
-      <div style="position:absolute;left:-5000px;" aria-hidden="true">
+      <div aria-hidden="true" style="position:absolute; left:-5000px;">
         <input type="text" name="b_300f16eed9cae6b6a09237b6f_fc7a53ce48" tabindex="-1" value="">
       </div>
     </form>
@@ -939,12 +890,11 @@ footer p {
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="contact-inner">
-    <h2 class="contact-h2" data-reveal>Your people<br>deserve <em>better.</em><br>Let's build that<br>together.</h2>
-    <p class="contact-desc" data-reveal>Send an email and I'll be back in touch within one business day. No long intake forms — just a straightforward conversation about what you need.</p>
+    <h2 class="contact-h2" data-reveal>Your people deserve <em>better.</em> Let's build that together.</h2>
+    <p class="contact-desc" data-reveal>Send an email and I'll be back in touch within one business day. No long intake forms, just a straightforward conversation about what you need.</p>
     <a href="mailto:hello@oneoneconsulting.com" class="email-link" data-reveal>
       hello@oneoneconsulting.com <span class="arr">↗</span>
     </a>
-
   </div>
 </section>
 
@@ -958,28 +908,29 @@ footer p {
     </div>
     <span class="footer-wordmark">People &amp; Culture</span>
   </a>
-  <p>© 2026 11 Consulting LLC · Alexandria, VA · PHR Certified HR Services</p>
+  <p>&copy; 2026 1:1 Consulting LLC &middot; Alexandria, VA &middot; PHR Certified HR Services</p>
 </footer>
 
 <script>
-/* CURSOR */
+/* ================================
+   CURSOR
+   ================================ */
 const cursor = document.getElementById('cursor');
-let mx = -100, my = -100;
-let cx = -100, cy = -100;
-
 document.addEventListener('mousemove', e => {
-  mx = e.clientX; my = e.clientY;
-  cursor.style.left = mx + 'px';
-  cursor.style.top  = my + 'px';
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top  = e.clientY + 'px';
 });
-document.querySelectorAll('a, button, .service-row, .insight-row, .sys-tag').forEach(el => {
+document.querySelectorAll('a, button, .service-row').forEach(el => {
   el.addEventListener('mouseenter', () => cursor.classList.add('grow'));
   el.addEventListener('mouseleave', () => cursor.classList.remove('grow'));
 });
 
-/* NAV */
+/* ================================
+   NAV STATE
+   ================================ */
 const nav = document.getElementById('nav');
-const darkSections = ['services','about','contact'];
+const darkSections = ['services', 'about', 'contact'];
+
 function updateNav() {
   const y = window.scrollY;
   let isDark = false;
@@ -995,7 +946,9 @@ function updateNav() {
 window.addEventListener('scroll', updateNav, { passive: true });
 updateNav();
 
-/* WORD SPLIT HERO */
+/* ================================
+   HERO WORD SPLIT
+   ================================ */
 (function() {
   const h1 = document.getElementById('hero-h1');
   if (!h1) return;
@@ -1005,19 +958,20 @@ updateNav();
   ).join(' ');
 })();
 
-/* SCROLL REVEALS */
+/* ================================
+   SCROLL REVEALS
+   ================================ */
 const revealObs = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const el = entry.target;
-      const delay = el.dataset.delay || 0;
-      setTimeout(() => el.classList.add('in-view'), delay);
-      revealObs.unobserve(el);
-    }
+    if (!entry.isIntersecting) return;
+    const el = entry.target;
+    const delay = el.dataset.delay ? Number(el.dataset.delay) : 0;
+    setTimeout(() => el.classList.add('in-view'), delay);
+    revealObs.unobserve(el);
   });
 }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
 
-document.querySelectorAll('[data-reveal]').forEach((el, i) => {
+document.querySelectorAll('[data-reveal]').forEach(el => {
   const rect = el.getBoundingClientRect();
   if (rect.top < window.innerHeight) {
     el.classList.add('in-view');
@@ -1026,38 +980,19 @@ document.querySelectorAll('[data-reveal]').forEach((el, i) => {
   }
 });
 
-/* STAGGER siblings within data-reveal parents */
-document.querySelectorAll('.service-list, .expertise-list, .why-stats, .contact-details').forEach(parent => {
+/* Stagger service and expertise list items */
+document.querySelectorAll('.service-list, .expertise-list').forEach(parent => {
   Array.from(parent.children).forEach((child, i) => {
-    if (!child.hasAttribute('data-reveal')) {
-      child.setAttribute('data-reveal', '');
-      child.dataset.delay = i * 90;
-      revealObs.observe(child);
-    }
+    if (child.hasAttribute('data-reveal')) return;
+    child.setAttribute('data-reveal', '');
+    child.dataset.delay = String(i * 90);
+    revealObs.observe(child);
   });
 });
 
-/* COUNTER ANIMATION */
-const counterObs = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    const el = entry.target;
-    const target = parseInt(el.dataset.target);
-    const duration = 1400;
-    const start = performance.now();
-    function tick(now) {
-      const p = Math.min((now - start) / duration, 1);
-      const ease = 1 - Math.pow(1 - p, 3);
-      el.textContent = Math.round(ease * target);
-      if (p < 1) requestAnimationFrame(tick);
-    }
-    requestAnimationFrame(tick);
-    counterObs.unobserve(el);
-  });
-}, { threshold: 0.5 });
-document.querySelectorAll('.counter').forEach(el => counterObs.observe(el));
-
-/* SMOOTH ANCHOR SCROLL */
+/* ================================
+   SMOOTH ANCHOR SCROLL
+   ================================ */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const target = document.querySelector(a.getAttribute('href'));
