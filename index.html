@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>1:1 Consulting — Your Fractional People Partner for Small Businesses and Organizations</title>
-<meta name="description" content="PHR-certified fractional people partner for small businesses. People operations reviews, ongoing partnership, and full HR build-outs. Based in Alexandria, VA, serving clients nationwide.">
+<title>1:1 Consulting — Fractional HR for Small Businesses</title>
+<meta name="description" content="PHR-certified fractional HR consultant for small businesses. Audits, ongoing support, and full HR build-outs. Based in Alexandria, VA, serving clients nationwide.">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -193,6 +193,7 @@ nav.dark-nav .nav-links a { color: var(--lt-muted); }
   padding: 0.55rem 1.4rem;
   border-radius: 100px;
   font-size: 0.78rem;
+  font-weight: 600;
   letter-spacing: 0.08em;
   transition: opacity 0.2s, transform 0.2s;
 }
@@ -297,13 +298,14 @@ nav.dark-nav .nav-links a.nav-cta { color: var(--warm); }
 }
 .btn:hover { transform: translateY(-2px); }
 
-.btn-sage { background: var(--sage); color: var(--dark); }
+.btn-sage { background: var(--sage); color: #fff; font-weight: 600; }
 .btn-sage:hover { background: var(--sage-hover); }
 
 .btn-outline {
   background: transparent;
   border: 1px solid var(--line);
   color: var(--muted);
+  font-weight: 600;
 }
 .btn-outline:hover { border-color: var(--ink); color: var(--ink); }
 
@@ -354,7 +356,7 @@ nav.dark-nav .nav-links a.nav-cta { color: var(--warm); }
 .service-list { width: 100%; }
 .service-row {
   display: grid;
-  grid-template-columns: 3rem 1fr 1fr auto;
+  grid-template-columns: 3rem 1fr auto;
   gap: 2rem;
   align-items: start;
   padding: 2.2rem 0;
@@ -394,6 +396,7 @@ nav.dark-nav .nav-links a.nav-cta { color: var(--warm); }
   letter-spacing: -0.02em;
   line-height: 1.2;
   transition: color 0.25s;
+  margin-bottom: 0.5rem;
 }
 .svc-desc {
   font-size: 0.87rem;
@@ -409,7 +412,10 @@ nav.dark-nav .nav-links a.nav-cta { color: var(--warm); }
   text-align: right;
   white-space: nowrap;
   padding-top: 0.1rem;
+  text-decoration: none;
+  transition: opacity 0.2s;
 }
+a.svc-price { white-space: normal; max-width: 16ch; }
 
 /* ================================
    WHY IT MATTERS
@@ -817,7 +823,6 @@ nav.dark-nav .hamburger span { background: var(--warm); }
   .hero-actions { justify-content: flex-start; }
   .services-header { grid-template-columns: 1fr; gap: 1.5rem; }
   .service-row { grid-template-columns: 2.5rem 1fr; gap: 1rem 1.5rem; }
-  .svc-desc { grid-column: 2; }
   .svc-price { grid-column: 2; text-align: left; }
   .why-grid { grid-template-columns: 1fr; gap: 3rem; }
   .about-grid { grid-template-columns: 1fr; gap: 4rem; }
@@ -826,8 +831,6 @@ nav.dark-nav .hamburger span { background: var(--warm); }
   .signup-btn { border-radius: 8px; margin: 4px; padding: 0.9rem; }
   .nav-links { gap: 1.2rem; }
   footer { flex-direction: column; gap: 0.75rem; text-align: center; }
-  .logo-divider,
-  .logo-stack { display: none; }
 }
 
 </style>
@@ -884,11 +887,11 @@ nav.dark-nav .hamburger span { background: var(--warm); }
 
   <div class="hero-bottom">
     <p class="hero-desc">
-    Fractional HR partnerships for small and mission-driven organizations. Senior-level people expertise, scoped to what you actually need without the overhead of a full-time hire.
+      Fractional HR support for small and mission-driven organizations. Senior-level people expertise, scoped to what you actually need, without the overhead of a full-time hire.
     </p>
     <div class="hero-actions">
       <a href="#services" class="btn btn-outline">Our services</a>
-      <a href="#contact" class="btn btn-sage">Let's connect</a>
+      <a href="#contact" class="btn btn-sage">Let's Connect</a>
     </div>
   </div>
 </section>
@@ -906,21 +909,27 @@ nav.dark-nav .hamburger span { background: var(--warm); }
   <div class="service-list">
     <div class="service-row" data-reveal>
       <span class="svc-num">01</span>
-      <p class="svc-name">People Operations Review</p>
-      <p class="svc-desc">A structured review of your HR practices, documentation, and compliance posture. You'll know exactly where you stand before making any decisions.</p>
-      <p class="svc-price">Beginning at $1,250</p>
+      <div class="svc-body">
+        <p class="svc-name">People Operations Review</p>
+        <p class="svc-desc">A structured review of your HR practices, documentation, and compliance posture. You'll know exactly where you stand before making any decisions.</p>
+      </div>
+      <p class="svc-price">From $1,250</p>
     </div>
     <div class="service-row" data-reveal>
       <span class="svc-num">02</span>
-      <p class="svc-name">Fractional HR Support</p>
-      <p class="svc-desc">Ongoing generalist support on a flexible, part-time basis. Benefits, payroll, onboarding, employee relations, handled by a PHR-certified professional who knows your organization.</p>
-      <p class="svc-price">Priced to fit your needs.</p>
+      <div class="svc-body">
+        <p class="svc-name">Fractional People Partnership</p>
+        <p class="svc-desc">Ongoing generalist support on a flexible, part-time basis. Benefits, payroll, onboarding, employee relations, handled by a PHR-certified professional who knows your organization.</p>
+      </div>
+      <a href="#contact" class="svc-price">Priced to fit your needs. Let's connect.</a>
     </div>
     <div class="service-row" data-reveal>
       <span class="svc-num">03</span>
-      <p class="svc-name">People Infrastructure Build-Out</p>
-      <p class="svc-desc">For organizations starting from scratch. HRIS selection and setup, hiring process design, employee handbook, onboarding program, compensation framework, built to last.</p>
-      <p class="svc-price">Custom scoped to best support your organization.</p>
+      <div class="svc-body">
+        <p class="svc-name">People Infrastructure Build-Out</p>
+        <p class="svc-desc">For organizations starting from scratch. HRIS selection and setup, hiring process design, employee handbook, onboarding program, compensation framework, built to last.</p>
+      </div>
+      <a href="#contact" class="svc-price">Custom scoped to best support your organization.</a>
     </div>
   </div>
 </section>
@@ -948,7 +957,7 @@ nav.dark-nav .hamburger span { background: var(--warm); }
       <h2 class="section-h2 h2-dark" data-reveal>Here for you. Here for your people.</h2>
       <p>1:1 Consulting LLC was founded on a simple premise: small organizations deserve the same quality of HR as large ones, sized to fit how they actually operate.</p>
       <p>Based in Alexandria, Virginia, our practice is led by <strong>Homiera Emam</strong>, a PHR-certified HR professional. Her background spans every function your people operations needs — from the administrative and compliance work that keeps you protected, to the operational systems that keep you running, to the people strategy that helps you grow.</p>
-      <p>She has built people infrastructure from scratch, guided organizations through significant change, and shown up as the steady, knowledgeable HR presence that small teams deserve. She works best with organizations that are serious about their people and ready to build something that lasts.</p>
+      <p>She has built HR infrastructure from scratch, navigated organizations through significant change, and shown up as the steady, knowledgeable HR presence that small teams deserve. She works best with organizations that are serious about their people and ready to build something that lasts.</p>
     </div>
     <div data-reveal>
       <p class="expertise-label">Areas of Practice</p>
@@ -999,7 +1008,7 @@ nav.dark-nav .hamburger span { background: var(--warm); }
 <section class="contact" id="contact">
   <div class="contact-inner">
     <h2 class="contact-h2" data-reveal>Your people deserve <em>better.</em> Let's build that together.</h2>
-    <p class="contact-desc" data-reveal>Let's start a conversation. We will be in touch within one business day. No long intake forms, just a straightforward chat about your people and what you're building.</p>
+    <p class="contact-desc" data-reveal>Send an email and I'll be back in touch within one business day. No long intake forms, just a straightforward conversation about what you need.</p>
     <a href="mailto:hello@oneoneconsulting.com" class="email-link" data-reveal>
       hello@oneoneconsulting.com <span class="arr">↗</span>
     </a>
